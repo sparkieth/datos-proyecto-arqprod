@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+#código para filtrar base de datos de Quien es quien en los precios de PROFECO
+#cd Documents/Semestre\ II/Gran_escala
+for year in {2018..2022}
+do
+#filtrar filas de cuidado personal
+	grep "CUIDADO PERSONAL" *$year.csv >condensado$year.csv
+	echo "terminó de filtrar $year"
+#unificar condensados en un mismo documento
+	mv condensado$year.csv ~/Documents/Semestre\ II/Gran_escala/proyecto
+	echo "se cambió de carpeta $year"
+done
